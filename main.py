@@ -1,4 +1,3 @@
-
 import numpy as np
 from matplotlib import pyplot as plt
 
@@ -9,17 +8,13 @@ n = len(data_raw)
 data = np.zeros((n, 684))
 for i in range(n):
     line = data_raw[i]
-# for line in data_raw:
     a = line.replace(',', '')
     a = a.replace(';', '')
     a = a.split()
     new_line = list(map(float,a))
-    # data.append(new_line)
     data[i,:] = new_line
 
 x, y, angle = data[:,0], data[:,1], data[:,2]
-
-beta = 240.0/681
 
 theta = np.radians(np.linspace(-120, 121, 681))
 a, b, = [], []
